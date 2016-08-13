@@ -1,7 +1,8 @@
 export default {
     travel:{
         origin: {},
-        destination: {}
+        destination: {},
+        results: []
     },
     asyncProcess: 0
 };
