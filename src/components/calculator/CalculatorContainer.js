@@ -16,19 +16,10 @@ const DecoredCalculatorForm = reduxForm({
 })(CalculatorForm);
 
 class CalculatorContainer extends React.Component{
-    constructor(){
-        super();
-        this.setOrigin = this.setOrigin.bind(this);
-        this.setDestination = this.setDestination.bind(this);
-    }
-    onSubmit(values){
-        console.log("SUBMIT",values);
-    }
-    setOrigin(origin){
-        this.props.actions.setOrigin(origin);
-    }
-    setDestination(destination){
-        this.props.actions.setDestination(destination);
+    onSubmit(location, dispatch){
+		dispatch(travelActions.setOrigin(location.origin));
+		dispatch(travelActions.setDestination(location.destination));
+		dispatch(travelActions.calculateDistance(location));
     }
     render(){
         return (
