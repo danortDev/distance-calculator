@@ -33,7 +33,8 @@ class CalculatorContainer extends React.Component{
 }
 
 CalculatorContainer.propTypes = {
-    actions: PropTypes.func
+    actions: PropTypes.object.isRequired,
+    travel: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
