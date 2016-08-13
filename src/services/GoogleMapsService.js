@@ -1,6 +1,8 @@
 import request from 'superagent';
-import gm from '../constants/googleMapsConstants';
 import * as asyncProcessActions from '../actions/asyncProcessActions';
+import * as messages from '../constants/messagesConstants';
+
+const service = new window.google.maps.DistanceMatrixService();
 
 const formatAddress = (address) =>
     address.replace(" ", "+");
@@ -13,24 +15,18 @@ const getLocation = (place) =>
         formatLocation(place.location) :
         formatAddress(place);
 
-export const getDistanceURL = (origin, destination) =>
-    gm.GOOGLE_MAPS_API + 'distancematrix/' +
-    gm.RESPONSE_FORMAT +
-    '?origins=' + getLocation(origin) +
-    '&destinations=' + getLocation(destination) +
-    '&key=' + gm.GOOGLE_MAPS_KEY;
+const errorNormalizer = (response, status) =>
+    status == "OK" && response.rows[0].elements[0].status == "ZERO_RESULTS" ?
+        messages.NO_DISTANCE_RESULTS : null;
 
-export function getDistance(origin, destination, dispatch) {
+export function getDistance(origin, destination, dispatch, callback) {
     dispatch(asyncProcessActions.beginAsyncProcess());
-    return new Promise(function (resolve, reject) {
-        request
-            .get(getDistanceURL(origin, destination))
-            .set('Accept', 'application/json')
-            .end(function (err, res) {
-                // TODO handle response
-                console.log(res, err);
-                dispatch(asyncProcessActions.endAsyncProcess());
-                resolve();
-        });
+    service.getDistanceMatrix({
+        origins: [getLocation(origin)],
+        destinations: [getLocation(destination)],
+        travelMode: 'DRIVING'
+    }, (response, status) => {
+        dispatch(asyncProcessActions.endAsyncProcess());
+        callback(response, errorNormalizer(response, status));
     });
 }
