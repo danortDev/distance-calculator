@@ -4,9 +4,11 @@ import {browserHistory} from 'react-router';
 import thunk from 'redux-thunk';
 import initialState from '../constants/initialState';
 import {reducer as form} from 'redux-form';
+import travel from './travelReducer';
 
 const reducers = {
     form,
+    travel,
     routing
 };
 
@@ -14,7 +16,10 @@ const reducer = combineReducers(reducers);
 const store = createStore(
     reducer,
     initialState,
-    compose(applyMiddleware(thunk))
+    compose(
+        applyMiddleware(thunk),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
 );
 
 export const history = syncHistoryWithStore(browserHistory, store);
