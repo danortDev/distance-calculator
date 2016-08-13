@@ -5,10 +5,12 @@ import thunk from 'redux-thunk';
 import initialState from '../constants/initialState';
 import {reducer as form} from 'redux-form';
 import travel from './travelReducer';
+import asyncProcess from './asyncProcessReducer';
 
 const reducers = {
     form,
     travel,
+    asyncProcess,
     routing
 };
 
