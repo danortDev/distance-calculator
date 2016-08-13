@@ -1,7 +1,11 @@
 import React from 'react';
+import Geosuggest from 'react-geosuggest';
 
 const CalculatorContainer = () => (
-    <h1> This will be the distance calculator form container </h1>
+    <div className="row">
+            <Geosuggest placeholder="Origin"/>
+            <Geosuggest placeholder="Destination"/>
+    </div>
 );
 
 export default CalculatorContainer;
