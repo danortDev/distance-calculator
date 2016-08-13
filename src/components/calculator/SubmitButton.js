@@ -18,7 +18,7 @@ SubmitButton.propTypes = {
 SubmitButton.defaultProps = {
     text: "Calculate distance",
     disabled: false,
-    className: "btn"
+    className: "btn btn-primary pull-right"
 };
 
 export default SubmitButton;
