@@ -2,6 +2,8 @@
 
 This app will allow people perform searches to know about the distance between 2 points, to allow them to plan their travel.
 
+You can try deep linking like this <http://localhost:3000/?origin=caracas&&destination=venezuela%20valencia>
+
 This project is based on [Cory House's](https://github.com/coryhouse) react-slingshot repository. You can learn more about it [here](https://github.com/coryhouse/react-slingshot)
 
 ## Get Started
