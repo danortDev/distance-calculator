@@ -1,4 +1,7 @@
 export const SET_ORIGIN = 'SET_ORIGIN';
 export const SET_DESTINATION = 'SET_DESTINATION';
+export const SET_RESULTS = 'SET_RESULTS';
+export const ADD_RESULTS = 'ADD_RESULTS';
+export const SET_TRAVEL = 'SET_TRAVEL';
 export const BEGIN_ASYNC_PROCESS = 'BEGIN_ASYNC_PROCESS';
 export const END_ASYNC_PROCESS = 'END_ASYNC_PROCESS';

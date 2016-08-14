@@ -29,6 +29,7 @@
   "author": "DanortDev",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "3.3.7",
     "object-assign": "4.1.0",
     "react": "15.3.0",
     "react-dom": "15.3.0",
@@ -38,8 +39,7 @@
     "react-router-redux": "4.0.5",
     "redux": "3.5.2",
     "redux-form": "5.3.2",
-    "redux-thunk": "2.1.0",
-    "superagent": "2.2.0"
+    "redux-thunk": "2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "6.4.0",
