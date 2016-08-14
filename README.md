@@ -7,7 +7,7 @@ This project is based on [Cory House's](https://github.com/coryhouse) react-slin
 ## Get Started
 
 1. **Check the Initail Setup Section below**.
-2. **Clone the project**. `git clone https://github.com/coryhouse/react-slingshot.git`.
+2. **Clone the project**. `git clone git@github.com:danortDev/distance-calculator.git`.
 3. **Install Dependecies**. `npm install`
 4. **Run the app**. `npm start -s` This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 
