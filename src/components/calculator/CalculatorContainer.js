@@ -1,13 +1,14 @@
 import React, {PropTypes} from 'react';
-import {bindActionCreators} from 'redux';
 import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
-import CalculatorForm from './CalculatorForm';
+import {bindActionCreators} from 'redux';
 import {actions as toastr} from 'react-redux-toastr';
-import ResultsList from './ResultsList';
 import * as travelActions from '../../actions/travelActions';
-import validate from './validate';
+import CalculatorForm from './CalculatorForm';
+import ResultsList from '../results/ResultsList';
 import * as messages from '../../constants/messagesConstants';
+import validate from './validate';
+
 
 const DecoredCalculatorForm = reduxForm({
 	form: 'calculateDistance',
