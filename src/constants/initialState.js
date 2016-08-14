@@ -1,7 +1,7 @@
 export default {
     travel:{
-        origin: {},
-        destination: {},
+        origin: "",
+        destination: "",
         results: []
     },
     asyncProcess: 0

@@ -29,7 +29,7 @@ export const calculateDistance = function(location, dispatch){
                 location.destination,
                 dispatch,
                 (response, error) => {
-                    error && reject(error);
+                    error ? reject(error) :
                     dispatch(addResults(response.rows[0].elements)) &&
                         resolve(response);
                 }
