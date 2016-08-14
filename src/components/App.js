@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import ReduxToastr from 'react-redux-toastr'
+import ReduxToastr from 'react-redux-toastr';
 import LogsContainer from './LogsContainer';
 
 class App extends React.Component {
@@ -8,7 +8,9 @@ class App extends React.Component {
             <div className="app-container">
                 <h1> React Distance Calculator </h1>
                 {this.props.children}
-				<LogsContainer/>
+				<div className="row">
+					<LogsContainer/>
+				</div>
 				<ReduxToastr
 					position="top-right"
 					timeOut={4000}

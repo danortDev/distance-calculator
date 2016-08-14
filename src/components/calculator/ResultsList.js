@@ -12,7 +12,8 @@ const setResults = results =>
     );
 
 const ResultsList = ({results}) => (
-    <div className="jumbotron top-20">
+    <div className="results-container top-20">
+        <h3 className="no-margin"> Results... </h3>
         <ResultRow
             origin="Origin"
             destination="Destination"

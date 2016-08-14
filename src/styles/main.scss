@@ -1,17 +1,34 @@
 $cyan-800: #00838F;
+$gray-100: #F5F5F5;
 
 .app-container{
     color: $cyan-800;
     width: 80%;
-    margin: 0 auto;
+    margin: 40px auto;
     .btn{
         margin-top: 20px;
     }
     .top-20{
         margin-top: 20px;
     }
+    .title-margin{
+        margin: 0;
+        margin-bottom: 10px;
+    }
     .align-right{
         text-align: right;
+    }
+    .results-container{
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: $gray-100;
+        .result-row{
+            padding: 5px;
+        }
+    }
+    .logs-container{
+        margin-top: 40px;
+        padding: 20px;
     }
     .geosuggest {
         font-size: 18px;

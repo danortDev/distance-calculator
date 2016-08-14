@@ -42,7 +42,7 @@ export const calculateDistance = function(location, dispatch){
                         distance: response.rows[0].elements[0].distance.text
                     })) && resolve(response);
                 }
-            )
+            );
         });
     };
 };

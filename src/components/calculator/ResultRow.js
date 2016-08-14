@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 const ResultRow = ({origin, destination, duration, distance}) => (
-    <div className="row">
+    <div className="row result-row">
         <div className="col-xs-3">
             {origin}
         </div>
