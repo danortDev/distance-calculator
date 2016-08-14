@@ -4,8 +4,8 @@ import SubmitButton from './SubmitButton';
 
 const CalculatorForm = ({
     fields,
-    submit,
     handleSubmit,
+    submit,
     submitting
 }) => (
     <form onSubmit={handleSubmit(submit)}>
@@ -21,8 +21,8 @@ const CalculatorForm = ({
 
 CalculatorForm.propTypes = {
     fields: PropTypes.object.isRequired,
-    submit: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    submit: PropTypes.func.isRequired,
     submitting: PropTypes.bool.isRequired
 };
 
