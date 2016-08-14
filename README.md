@@ -2,12 +2,14 @@
 
 This app will allow people perform searches to know about the distance between 2 points, to allow them to plan their travel.
 
+You can try deep linking like this <http://localhost:3000/?origin=caracas&&destination=venezuela%20valencia>
+
 This project is based on [Cory House's](https://github.com/coryhouse) react-slingshot repository. You can learn more about it [here](https://github.com/coryhouse/react-slingshot)
 
 ## Get Started
 
 1. **Check the Initail Setup Section below**.
-2. **Clone the project**. `git clone https://github.com/coryhouse/react-slingshot.git`.
+2. **Clone the project**. `git clone git@github.com:danortDev/distance-calculator.git`.
 3. **Install Dependecies**. `npm install`
 4. **Run the app**. `npm start -s` This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 

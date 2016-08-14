@@ -2,26 +2,31 @@ import * as types from './actionsTypes';
 import {getDistance} from '../services/GoogleMapsService';
 
 export const setOrigin = (origin) => ({
-    type: types.SET_ORIGIN, origin
+    type: types.LOGGABLE_SET_ORIGIN, origin
 });
 
 export const setDestination = (destination) => ({
-    type: types.SET_DESTINATION, destination
+    type: types.LOGGABLE_SET_DESTINATION, destination
 });
 
 export const addResults = (results) => ({
-    type: types.ADD_RESULTS, results
+    type: types.LOGGABLE_ADD_RESULTS, results
 });
 
 export const setResults = (results) => ({
-    type: types.SET_RESULTS, results
+    type: types.LOGGABLE_SET_RESULTS, results
 });
 
 export const setTravel = (travel) => ({
-    type: types.SET_TRAVEL, travel
+    type: types.LOGGABLE_SET_TRAVEL, travel
+});
+
+export const calculatingDistance = () => ({
+    type: types.LOGGABLE_CALCULATING_DISTANCE
 });
 
 export const calculateDistance = function(location, dispatch){
+    dispatch(calculatingDistance());
     return function(dispatch){
         return new Promise(function(resolve,reject){
             getDistance(
@@ -30,8 +35,12 @@ export const calculateDistance = function(location, dispatch){
                 dispatch,
                 (response, error) => {
                     error ? reject(error) :
-                    dispatch(addResults(response.rows[0].elements)) &&
-                        resolve(response);
+                    dispatch(addResults({
+                        origin: response.originAddresses[0],
+                        destination: response.destinationAddresses[0],
+                        duration: response.rows[0].elements[0].duration.text,
+                        distance: response.rows[0].elements[0].distance.text
+                    })) && resolve(response);
                 }
             )
         });

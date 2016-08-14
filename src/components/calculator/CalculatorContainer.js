@@ -3,9 +3,11 @@ import {bindActionCreators} from 'redux';
 import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import CalculatorForm from './CalculatorForm';
+import {actions as toastr} from 'react-redux-toastr';
 import ResultsList from './ResultsList';
 import * as travelActions from '../../actions/travelActions';
 import validate from './validate';
+import * as messages from '../../constants/messagesConstants';
 
 const DecoredCalculatorForm = reduxForm({
 	form: 'calculateDistance',
@@ -22,6 +24,10 @@ const DecoredCalculatorForm = reduxForm({
 }))(CalculatorForm);
 
 class CalculatorContainer extends React.Component{
+	constructor(){
+		super();
+		this.onSubmit = this.onSubmit.bind(this);
+	}
 	componentWillMount(){
 		this.props.queryParams.origin
 			&& this.props.actions.setOrigin(this.props.queryParams.origin);
@@ -32,16 +38,27 @@ class CalculatorContainer extends React.Component{
 		let origin = this.props.queryParams.origin;
 		let destination = this.props.queryParams.destination;
 		origin && destination &&
-			this.props.actions.calculateDistance(
-				{origin,destination},
+			this.calculateDistance(
+				{origin, destination},
 				this.props.dispatch
 			);
 	}
 	onSubmit(location, dispatch){
+		return this.calculateDistance(location, dispatch)
+    }
+	calculateDistance(location, dispatch){
 		return dispatch(
 			travelActions.calculateDistance(location, dispatch)
+		).then( (response) => {
+			dispatch(toastr.success(
+				messages.SUCCESS_TITLE,
+				messages.SUCCESS_MESSAGE));
+			}
+		).catch((error) => dispatch(toastr.error(
+			messages.ERROR_TITLE,
+			error))
 		);
-    }
+	}
     render(){
         return (
 			<div className="row">
