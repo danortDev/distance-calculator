@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import ReduxToastr from 'react-redux-toastr';
-import LogsContainer from './LogsContainer';
+import LogsContainer from './log/LogsContainer';
 
 class App extends React.Component {
 	render() {
