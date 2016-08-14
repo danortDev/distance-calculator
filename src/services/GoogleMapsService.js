@@ -1,4 +1,3 @@
-import request from 'superagent';
 import * as asyncProcessActions from '../actions/asyncProcessActions';
 import * as messages from '../constants/messagesConstants';
 
