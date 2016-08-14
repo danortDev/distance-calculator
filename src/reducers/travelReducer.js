@@ -12,7 +12,10 @@ const travelReducer = function(state = initialState.travel, action){
         case types.LOGGABLE_SET_RESULTS:
             return Object.assign({}, state, {results: action.results});
         case types.LOGGABLE_ADD_RESULTS:
-            return Object.assign({}, state, {results: [action.results] });
+            return Object.assign({}, state, {results: [
+                action.results,
+                ...state.results
+            ]});
         default:
             return state;
     }
