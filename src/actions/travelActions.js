@@ -21,7 +21,12 @@ export const setTravel = (travel) => ({
     type: types.LOGGABLE_SET_TRAVEL, travel
 });
 
+export const calculatingDistance = () => ({
+    type: types.LOGGABLE_CALCULATING_DISTANCE
+});
+
 export const calculateDistance = function(location, dispatch){
+    dispatch(calculatingDistance());
     return function(dispatch){
         return new Promise(function(resolve,reject){
             getDistance(
