@@ -4,5 +4,6 @@ export default {
         destination: "",
         results: []
     },
+    logs: [],
     asyncProcess: 0
 };
