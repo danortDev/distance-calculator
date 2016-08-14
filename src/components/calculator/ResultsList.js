@@ -10,7 +10,7 @@ const setResults = results =>
     );
 
 const ResultsList = ({results}) => (
-    <div>
+    <div className="jumbotron top-20">
         <ResultRow
             leftCol="Distance"
             rightCol="Duration"/>
