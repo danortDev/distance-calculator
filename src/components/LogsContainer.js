@@ -8,8 +8,13 @@ const setLog = logs =>
     );
 
 const LogsContainer = ({logs}) => (
-    <div>
-        {logs.length > 0 && <LogRow action="Action" at="Ocurred At" />}
+    <div className="logs-container">
+        {logs.length > 0 &&
+            <div>
+                <h3 className="no-margin">Activity log...</h3>
+                <LogRow action="Action" at="Ocurred At" />
+            </div>
+        }
         {setLog(logs)}
     </div>
 );
@@ -20,6 +25,6 @@ LogsContainer.propTypes = {
 
 const mapStateToProps = state => ({
     logs: state.logs
-})
+});
 
 export default connect(mapStateToProps)(LogsContainer);

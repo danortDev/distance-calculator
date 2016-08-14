@@ -11,13 +11,19 @@ const CalculatorForm = ({
     <form
         className="align-right"
         onSubmit={handleSubmit(submit)}>
-        <GeosuggestInput
-            placeholder="Origin"
-            field={fields.origin}/>
-        <GeosuggestInput
-            placeholder="Destination"
-            field={fields.destination}/>
-        <SubmitButton type="submit" disabled={submitting}/>
+        <div className="row">
+            <div className="col-xs-6">
+                <GeosuggestInput
+                    placeholder="Origin"
+                    field={fields.origin}/>
+            </div>
+            <div className="col-xs-6">
+                <GeosuggestInput
+                    placeholder="Destination"
+                    field={fields.destination}/>
+                <SubmitButton type="submit" disabled={submitting}/>
+            </div>
+        </div>
     </form>
 );
 

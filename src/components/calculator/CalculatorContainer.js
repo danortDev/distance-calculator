@@ -44,12 +44,12 @@ class CalculatorContainer extends React.Component{
 			);
 	}
 	onSubmit(location, dispatch){
-		return this.calculateDistance(location, dispatch)
+		return this.calculateDistance(location, dispatch);
     }
 	calculateDistance(location, dispatch){
 		return dispatch(
 			travelActions.calculateDistance(location, dispatch)
-		).then( (response) => {
+		).then( () => {
 			dispatch(toastr.success(
 				messages.SUCCESS_TITLE,
 				messages.SUCCESS_MESSAGE));
