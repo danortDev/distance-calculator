@@ -8,7 +8,7 @@ import * as travelActions from '../../actions/travelActions';
 import validate from './validate';
 
 const DecoredCalculatorForm = reduxForm({
-	form: 'calculate-distance',
+	form: 'calculateDistance',
 	fields: [
 		'origin',
 		'destination'
@@ -48,7 +48,8 @@ class CalculatorContainer extends React.Component{
 				<DecoredCalculatorForm
 					ref="calculatorForm"
 					submit={this.onSubmit}/>
-				<ResultsList results={this.props.travel.results}/>
+				{this.props.travel.results.length > 0 &&
+					<ResultsList results={this.props.travel.results}/>}
 			</div>
         );
     }

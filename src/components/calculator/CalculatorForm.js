@@ -8,7 +8,9 @@ const CalculatorForm = ({
     submit,
     submitting
 }) => (
-    <form onSubmit={handleSubmit(submit)}>
+    <form
+        className="align-right"
+        onSubmit={handleSubmit(submit)}>
         <GeosuggestInput
             placeholder="Origin"
             field={fields.origin}/>
