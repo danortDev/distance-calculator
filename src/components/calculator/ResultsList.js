@@ -5,15 +5,19 @@ const setResults = results =>
     results.map((result, index) =>
         <ResultRow
             key={index}
-            leftCol={result.distance.text}
-            rightCol={result.duration.text}/>
+            origin={result.origin}
+            destination={result.destination}
+            duration={result.duration}
+            distance={result.distance}/>
     );
 
 const ResultsList = ({results}) => (
     <div className="jumbotron top-20">
         <ResultRow
-            leftCol="Distance"
-            rightCol="Duration"/>
+            origin="Origin"
+            destination="Destination"
+            distance="Distance"
+            duration="Duration"/>
         {setResults(results)}
     </div>
 );

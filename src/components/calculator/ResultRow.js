@@ -1,19 +1,27 @@
 import React, {PropTypes} from 'react';
 
-const ResultRow = ({leftCol, rightCol}) => (
+const ResultRow = ({origin, destination, duration, distance}) => (
     <div className="row">
-        <div className="col-xs-4 col-xs-offset-2">
-            {leftCol}
+        <div className="col-xs-3">
+            {origin}
         </div>
-        <div className="col-xs-4 col-xs-offset-2">
-            {rightCol}
+        <div className="col-xs-3">
+            {destination}
+        </div>
+        <div className="col-xs-3">
+            {duration}
+        </div>
+        <div className="col-xs-3">
+            {distance}
         </div>
     </div>
 );
 
 ResultRow.propTypes = {
-    leftCol: PropTypes.string.isRequired,
-    rightCol: PropTypes.string.isRequired
+    origin: PropTypes.string.isRequired,
+    destination: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    distance: PropTypes.string.isRequired
 };
 
 export default ResultRow;
