@@ -29,13 +29,19 @@
   "author": "DanortDev",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "3.3.7",
+    "moment": "2.14.1",
     "object-assign": "4.1.0",
     "react": "15.3.0",
     "react-dom": "15.3.0",
+    "react-geosuggest": "1.24.1",
     "react-redux": "4.4.5",
+    "react-redux-toastr": "3.6.0",
     "react-router": "2.6.1",
     "react-router-redux": "4.0.5",
-    "redux": "3.5.2"
+    "redux": "3.5.2",
+    "redux-form": "5.3.2",
+    "redux-thunk": "2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "6.4.0",
@@ -67,6 +73,8 @@
     "file-loader": "0.9.0",
     "html-webpack-plugin": "2.22.0",
     "isparta": "4.0.0",
+    "less": "2.7.1",
+    "less-loader": "2.2.3",
     "mocha": "3.0.1",
     "node-sass": "3.8.0",
     "npm-run-all": "2.3.0",
